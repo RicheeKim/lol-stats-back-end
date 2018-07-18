@@ -6,6 +6,7 @@ class RiotApi < ApplicationRecord
 
 
   def self.fetch_data_for_summoner_name(summoner_name)
+    puts summoner_name
     res = RestClient.get("https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/#{summoner_name}?api_key=#{API_KEY}")
     JSON.parse(res.body)
   end
@@ -19,6 +20,12 @@ class RiotApi < ApplicationRecord
     res = RestClient.get("https://na1.api.riotgames.com/lol/match/v3/matchlists/by-account/#{account_id}?api_key=#{API_KEY}")
     JSON.parse(res.body)
   end
+
+  def self.fetch_data_for_summoner_id(account_id)
+    res = RestClient.get("https://na1.api.riotgames.com/lol/league/v3/positions/by-summoner/#{account_id}?api_key=#{API_KEY}")
+    JSON.parse(res.body)
+  end
+
 
 
 end
