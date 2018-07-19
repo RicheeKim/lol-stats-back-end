@@ -5,6 +5,6 @@ Rails.application.routes.draw do
 
   get '/leaderboard', to: 'api#leaderboard'
 
-  get 'summoner_id_data', to: 'api#summoner_id_data'
+  get 'summoner_id_data/:id', to: 'api#summoner_id_data'
 
 end
