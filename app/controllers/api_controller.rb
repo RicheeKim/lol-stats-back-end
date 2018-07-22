@@ -16,6 +16,11 @@ class ApiController < ApplicationController
     render json: leaderboard
   end
 
+  def account_id_matches
+    account_id_matches = RiotApi.fetch_matches_for_account_id(params[:id])
+    render json: account_id_matches
+  end
+
 
 
 end

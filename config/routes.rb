@@ -7,4 +7,6 @@ Rails.application.routes.draw do
 
   get 'summoner_id_data/:id', to: 'api#summoner_id_data'
 
+  get 'account_id_matches/:id', to: 'api#account_id_matches'
+  
 end
