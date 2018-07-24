@@ -6,7 +6,6 @@ class ApiController < ApplicationController
   end
 
   def summoner_id_data
-
     summoner_id_data = RiotApi.fetch_data_for_summoner_id(params[:id])
     render json: summoner_id_data
   end
@@ -19,6 +18,11 @@ class ApiController < ApplicationController
   def account_id_matches
     account_id_matches = RiotApi.fetch_matches_for_account_id(params[:id])
     render json: account_id_matches
+  end
+
+  def match_details
+    match_details = RiotApi.fetch_data_for_match_id(params[:id])
+    render json: match_details
   end
 
 
